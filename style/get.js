@@ -28,6 +28,12 @@ module.exports.get = (event, context, callback) => {
     // create a response
     const response = {
       statusCode: 200,
+      headers: {
+        'Access-Control-Expose-Headers': 'Access-Control-Allow-Origin',
+        'Access-Control-Allow-Credentials': true,
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
       body: JSON.stringify(result.Item),
     };
     callback(null, response);
