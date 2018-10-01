@@ -1,4 +1,4 @@
-# serverless-node-rest-api
+# serverless-node-rest-api for FE app 'Multi-Tenant-React-App'
 
 A Serverless Framework Project for a REST HTTP API for CRUD operations on DynamoDB.
 
@@ -14,22 +14,22 @@ That's it!
 
 Then...
 
-Add a pet:
-`curl -X POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/pets --data '{ "petName": "Bella", "petBreed": "Corgi" }'`
+Add a tenant:
+`curl -X POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/style --data '{ "tenantName": "Tenant01", "tenantId": "tenant001" }'`
 
 Sample response:
-`{"id":"618b4190-6917-11e7-82a3-ed6b88661fcb","petName":"Bella","petBreed":"Corgi","createdAt":1500093479977,"updatedAt":1500093479977}`
+`{"id":"618b4190-6917-11e7-82a3-ed6b88661fcb","tenantName":"Tenant01","tenantId":"tenant001","createdAt":1500093479977,"updatedAt":1500093479977}`
 
-Add another pet:
-`curl -X POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/pets --data '{ "petName": "Riley", "petBreed": "Jack Russell Mix" }'`
+Add another tenant:
+`curl -X POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/style --data '{ "tenantName": "Tenant02", "tenantId": "tenant002" }'`
 
-List all pets:
-`curl https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/pets`
+List all tenants:
+`curl https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/style`
 
-List the details of a specific pet (in this case Bella from above):
-`curl https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/pets/618b4190-6917-11e7-82a3-ed6b88661fcb`
+List the details of a specific tenant (in this case Bella from above):
+`curl https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/style/618b4190-6917-11e7-82a3-ed6b88661fcb`
 
-General structure for listing specific pet details:
-`curl https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/pets/id`
+General structure for listing specific tenant details:
+`curl https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/style/id`
 
 Inspired by - https://github.com/serverless/examples/tree/master/aws-node-rest-api-with-dynamodb
