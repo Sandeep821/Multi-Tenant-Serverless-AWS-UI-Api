@@ -36,7 +36,19 @@ module.exports.create = (event, context, callback) => {
           nav: {
             direction: data.site.style.nav.direction
           }
-        }
+        },
+        elements:  {
+          bannerheading: data.site.elements.bannerheading,
+          bannersData: {
+            title: data.site.elements.bannersData.title,
+            image:   data.site.elements.bannersData.image
+          },
+          carouselData: {
+            title: data.site.elements.carouselData.title,
+            description: data.site.elements.carouselData.description,
+            image:  data.site.elements.carouselData.image
+          }
+        },
       }
     }
   };

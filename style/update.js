@@ -25,12 +25,14 @@ module.exports.update = (event, context, callback) => {
       id: event.pathParameters.id,
     },
     ExpressionAttributeValues: {
-      ':petName': data.petName,
-      ':petBreed': data.petBreed,
+      ':tenantName': data.tenantName,
+      ':tenantId': data.tenantId,
+      ':msg': data.msg,
       ':checked': data.checked,
       ':updatedAt': timestamp,
+
     },
-    UpdateExpression: 'SET petName = :petName, petBreed = :petBreed, updatedAt = :updatedAt',
+    UpdateExpression: 'SET tenantName = :tenantName, tenantId = :tenantId, msg = :msg, updatedAt = :updatedAt',
     ReturnValues: 'ALL_NEW',
   };
 
@@ -46,6 +48,12 @@ module.exports.update = (event, context, callback) => {
     // create a response
     const response = {
       statusCode: 200,
+      headers: {
+        'Access-Control-Expose-Headers': 'Access-Control-Allow-Origin',
+        'Access-Control-Allow-Credentials': true,
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
       body: JSON.stringify(result.Attributes),
     };
     callback(null, response);
