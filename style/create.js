@@ -39,15 +39,8 @@ module.exports.create = (event, context, callback) => {
         },
         elements:  {
           bannerheading: data.site.elements.bannerheading,
-          bannersData: {
-            title: data.site.elements.bannersData.title,
-            image:   data.site.elements.bannersData.image
-          },
-          carouselData: {
-            title: data.site.elements.carouselData.title,
-            description: data.site.elements.carouselData.description,
-            image:  data.site.elements.carouselData.image
-          }
+          bannersData: data.site.elements.bannersData,
+          carouselData: data.site.elements.carouselData,
         },
       }
     }
